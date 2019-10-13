@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b199e1f1-b61b-45e6-9606-67e6551139e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/home/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/basic.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/index.html" afterDir="false" />
     </list>
