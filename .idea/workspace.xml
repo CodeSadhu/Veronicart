@@ -4,7 +4,7 @@
     <list default="true" id="b199e1f1-b61b-45e6-9606-67e6551139e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/home/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/help.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/about.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
