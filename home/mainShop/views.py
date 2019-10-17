@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . models import Product, Contact
+from . models import Product, Contact, Orders
 from math import ceil
+import logging
 
+
+logger = logging.getLogger(__name__)
 
 def index(request):
     allProds = []
@@ -13,11 +16,6 @@ def index(request):
         n = len(prod)
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
         allProds.append([prod, range(1, nSlides), nSlides])
-    # products = Product.objects.all()
-    # print(products)
-    # n = len(products)
-    # nSlides = n // 4 + ceil((n / 4) - (n // 4))
-    # params = {'no_of_slides': nSlides, 'range': range(1, nSlides), 'product': products}
     params = {'allProds': allProds}
     return render(request, 'mainShop/index.html', params)
 
@@ -51,4 +49,19 @@ def prodView(request, myId):
 
 
 def checkout(request):
+    if request.method == "POST":
+        items_json = request.POST.get('itemsJson', '')
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        address = request.POST.get('address1', '') + " " + request.POST.get('address2', '')
+        city = request.POST.get('city', '')
+        state = request.POST.get('state', '')
+        zip_code = request.POST.get('zip_code', '')
+        phone = request.POST.get('phone', '')
+        order = Orders(items_json=items_json, name=name, email=email, address=address, city=city,
+                       state=state, zip_code=zip_code, phone=phone)
+        order.save()
+        thank = True
+        id = order.order_id
+        return render(request, 'mainShop/checkout.html', {'thank': thank, 'id': id})
     return render(request, 'mainShop/checkout.html')
