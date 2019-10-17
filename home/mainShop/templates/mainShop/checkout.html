@@ -1,4 +1,83 @@
 {% extends 'mainShop/basic.html' %}
 
 {% block title%} Checkout - Veronicart{% endblock %}
-{% block body %} This is our checkout page {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="col my-4">
+        <h2>Veronicart Checkout -- Review Your Order</h2>
+        <div class="my-4">
+            <ul class="list-group" id="items">
+            </ul>
+        </div>
+    </div>
+    <div class="col my-4">
+        <h2>Veronicart Checkout -- Enter Delivery Details</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputname">Name</label>
+                    <input type="name" class="form-control" id="inputname" placeholder="Enter Your Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 1">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Address line 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Address Line 2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity" placeholder="Enter City">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <input type="text" class="form-control" id="inputState" placeholder="Enter State">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip" placeholder="Enter Zip Code">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputZip">Phone Number</label>
+                <input type="tel" class="form-control" id="inputPhone" placeholder="Enter Phone Number">
+            </div>
+            <button type="submit" class="btn btn-info">Place Order</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+    <script>
+        if (localStorage.getItem('cart') == null) {
+            var cart = {};
+        } else {
+            cart = JSON.parse(localStorage.getItem('cart'));
+        }
+        console.log(cart);
+        var sum = 0;
+        if ($.isEmptyObject(cart)) {
+            //if object is empty
+            mystr = `<p>No items for checkout! Add some items in the cart first!</p>`
+            $('#items').append(mystr);
+        } else {
+            for (item in cart) {
+                let name = cart[item][1];
+                let qty = cart[item][0];
+                sum = sum + qty;
+                mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">${name}
+                            <span class="badge badge-primary badge-pill">${qty}</span>
+                        </li>`
+                $('#items').append(mystr);
+            }
+        }
+        document.getElementById('cart').innerHTML = sum;
+    </script>
+{% endblock %}
