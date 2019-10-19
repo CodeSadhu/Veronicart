@@ -7,9 +7,6 @@
       <change beforePath="$PROJECT_DIR$/home/home/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/home/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/basic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/help.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/help.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
