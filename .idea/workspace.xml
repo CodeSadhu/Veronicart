@@ -5,8 +5,22 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/home/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/home/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/home/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/static/mainBlog/mystatic.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/templates/mainBlog/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainBlog/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/basic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/prodView.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/templates/mainShop/prodView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainShop/templates/mainShop/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainShop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/mainShop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/mainShop/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
