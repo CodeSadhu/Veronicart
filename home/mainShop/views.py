@@ -3,24 +3,24 @@ from django.http import HttpResponse
 from . models import Product, Contact, Orders, OrderUpdate
 from math import ceil
 import json
-import logging
-
-
-def index(request):
-    allProds = []
-    catprods = Product.objects.values('category', 'id')
-    cats = {item['category'] for item in catprods}
-    for cat in cats:
-        prod = Product.objects.filter(category=cat)
-        n = len(prod)
-        nSlides = n // 4 + ceil((n / 4) - (n // 4))
-        allProds.append([prod, range(1, nSlides), nSlides])
-    params = {'allProds': allProds}
-    return render(request, 'mainShop/index.html', params)
 
 
 def about(request):
     return render(request, 'mainShop/about.html')
+
+
+def index(request):
+    prodArr = []
+    catprods = Product.objects.values('category', 'id')
+    cats = {item['category'] for item in catprods}
+    for cat in cats:
+        product = Product.objects.filter(category=cat)
+        n = len(product)
+        slideNo = n // 4 + ceil((n / 4) - (n // 4))
+        prodArr.append([product, range(1, slideNo), slideNo])
+    passer = {'prodArr': prodArr}
+    return render(request, 'mainShop/index.html', passer)
+
 
 
 def contact(request):
@@ -32,31 +32,6 @@ def contact(request):
         contact = Contact(name=name, email=email, phone=phone, desc=desc)
         contact.save()
     return render(request, 'mainShop/help.html')
-
-
-def tracker(request):
-    if request.method=="POST":
-        orderId = request.POST.get('orderId', '')
-        email = request.POST.get('email', '')
-        try:
-            order = Orders.objects.filter(order_id=orderId, email=email)
-            if len(order)>0:
-                update = OrderUpdate.objects.filter(order_id=orderId)
-                updates = []
-                for item in update:
-                    updates.append({'text': item.update_desc, 'time': item.timestamp})
-                    response = json.dumps({"status":"success", "updates": updates, "itemsJson": order[0].items_json}, default=str)
-                return HttpResponse(response)
-            else:
-                return HttpResponse('{"status":"noitem"}')
-        except Exception as e:
-            return HttpResponse('{"status":"error"}')
-            
-    return render(request, 'mainShop/tracker.html')
-
-def prodView(request, myId):
-    product = Product.objects.filter(id=myId)
-    return render(request, 'mainShop/prodView.html', {'product':product[0]})
 
 
 def checkout(request):
@@ -77,3 +52,28 @@ def checkout(request):
         id = order.order_id
         return render(request, 'mainShop/checkout.html', {'thank': thank, 'id': id})
     return render(request, 'mainShop/checkout.html')
+
+def tracker(request):
+    if request.method=="POST":
+        orderId = request.POST.get('orderId', '')
+        email = request.POST.get('email', '')
+        try:
+            order = Orders.objects.filter(order_id=orderId, email=email)
+            if len(order) > 0:
+                update = OrderUpdate.objects.filter(order_id=orderId)
+                updates = []
+                for item in update:
+                    updates.append({'text': item.update_desc, 'time': item.timestamp})
+                    response = json.dumps({"status":"success", "updates": updates, "itemsJson": order[0].items_json}, default=str)
+                return HttpResponse(response)
+            else:
+                return HttpResponse('{"status":"noitem"}')
+        except Exception as e:
+            return HttpResponse('{"status":"error"}')
+            
+    return render(request, 'mainShop/tracker.html')
+
+def prodView(request, myId):
+    product = Product.objects.filter(id=myId)
+    return render(request, 'mainShop/prodView.html', {'product':product[0]})
+

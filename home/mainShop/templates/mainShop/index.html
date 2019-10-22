@@ -52,7 +52,7 @@ body .no-padding {
 {% load static %}
 <div class="container">
     <!--Slideshow starts here -->
-    {% for product, range, nSlides in allProds %}
+    {% for product, range, slideNo in prodArr %}
     <h5 class="my-4">{{product.0.category}} - Recommended Items</h5>
     <div class="row">
         <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
@@ -104,7 +104,7 @@ body .no-padding {
 {% endblock %}
 {% block js %}
 <script>
-
+    //Logic behind add button (cart)
     if (localStorage.getItem('cart') == null) {
         var cart = {};
     } else {
@@ -112,15 +112,15 @@ body .no-padding {
         updateCart(cart);
     }
     $('.divpr').on('click', 'button.cart', function() {
-        var idstr = this.id.toString();
-        if (cart[idstr] != undefined) {
-            qty = cart[idstr][0] + 1;
+        var storeId = this.id.toString();
+        if (cart[storeId] != undefined) {
+            qty = cart[storeId][0] + 1;
         } else {
             qty = 1;
-            name = document.getElementById('name' +idstr).innerHTML;
-            price = document.getElementById('price'+idstr).innerHTML;
+            name = document.getElementById('name' +storeId).innerHTML;
+            price = document.getElementById('price' +storeId).innerHTML;
             price = parseInt(price);
-            cart[idstr] = [qty, name, price];
+            cart[storeId] = [qty, name, price];
         }
         updateCart(cart);
     });
