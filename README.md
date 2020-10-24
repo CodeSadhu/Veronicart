@@ -1,13 +1,16 @@
 # Veronicart
 Veronicart is a Django-based web-app that was created as a miniproject for my Academic term. It is a web-app I created with my friend [Onkar](https://github.com/TheGeekyMan) for fun and to understand how ecommerce websites function.
 
+##### Check the project live [here](https://blooming-lake-82895.herokuapp.com/)
+##
+#
 ##### Stuff used:
   - Bootstrap Framework (Frontend)
   - Python/Django, Javascript (Backend handling)
   - SQLite Database (Built-in with Django)
   - A pinch of nerd magic
 
-##### How to run:
+## For devs and other curious folk:
 1. Install the latest version of [Python](https://www.python.org/downloads/)
 2. Install the latest version of Django: `pip install django`
 3. Clone this project using `git clone` command
